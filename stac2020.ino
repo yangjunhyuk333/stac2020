@@ -18,41 +18,15 @@ void setup() {
 
   Wire.begin();
   mpu6050.begin();      
-
-  //자이로센서 각도 계산 시작 
-  //setAngelY();
 }
 
 void loop() {
   calAngleX();
 }
 
-
-//----------------------------------------------
-
-//초기 Y값을 설정하는 함수
-/*void setAngelY(){
-  Wire.begin();
-  mpu6050.begin();
-
-  mpu6050.calcGyroOffsets(true);
-
-  mpu6050.update();
-
-  while(1){
-    if(mpu6050.getGyroYoffset() > -10.0 && mpu6050.getGyroYoffset() < 10.0){
-       Y = mpu6050.getGyroYoffset();
-       Serial.print(Y);
-       BTSerial.print(Y);
-       break;
-    }else{
-       continue;
-    }
-  }
-}*/
-
 //------------------------------------------------
-//Y값을 통해서 척추의 각도를 측정하는함수
+
+//X값을 통해서 척추의 각도를 측정하는함수
 
 void calAngleX(){
   mpu6050.update();
@@ -60,11 +34,11 @@ void calAngleX(){
   Serial.print("calX: ");
   Serial.println(calX);
   delay(100);
-  if(calX > -59){
+  if(calX > -60){
     delay (2000);
     mpu6050.update();
     calX = mpu6050.getAccAngleX();
-    if(calX > -59){
+    if(calX > -60){
       analogWrite(3, 200);
       BTSerial.println("10");
       delay (1000);
