@@ -30,13 +30,13 @@
 3. 현 자세 상태를 시각화 하여 보여줌으로써 빠른 이해가 가능합니다.
 
 [사용 툴/언어]
-Arduino IDE (language: C/C++)
-VS code (language: flutter)
+- Arduino IDE (language: C/C++)
+- VS code (language: flutter)
 
 [보드]
-Arduino Nano
+- Arduino Nano
 
 [센서/모듈]
-MPU6050(각속도/가속도)
-진동 모듈
-블루투스 모듈(HC-06)
+- MPU6050(각속도/가속도)
+- 진동 모듈
+- 블루투스 모듈(HC-06)
