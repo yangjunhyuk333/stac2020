@@ -91,19 +91,16 @@ void calAngleY(){
 void workingVibration(){
   
   c_millis = millis();
-  
+  if(c_millis - p_millis > 3000){
+    p_millis = c_millis;     
     if(angle < 80 || angle > 120){
-      if(c_millis - p_millis > 3000){
-        p_millis = c_millis;     
-        
-        if(angle < 80 || angle > 120){
-           analogWrite(Vibration, 1000); //진동을 울린다.
-           delay(500);
+      if(angle < 80 || angle > 120){
+           analogWrite(Vibration, 800); //진동을 울린다.
+           delay(300);
            analogWrite(Vibration, 0); //진동을 끈다.  
-        }else{
-          
-        }
-        
-     }
+      }else{
+           analogWrite(Vibration, 0); //진동을 끈다. 
+      }
+    }
   }
 }
