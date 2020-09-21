@@ -81,7 +81,7 @@ void calAngleY(){
   Serial.println(angle);
 
   //안드로이드 기기에 각도 전송
-  BTSerial.print(angle);
+  BTSerial.println(angle);
   
   workingVibration(); //진동 함수 호출
   
@@ -91,7 +91,7 @@ void calAngleY(){
 void workingVibration(){
   
   c_millis = millis();
-  if(c_millis - p_millis > 300000){
+  if(c_millis - p_millis > 3000){
     p_millis = c_millis;     
     if(angle < 80 || angle > 120){
       if(angle < 80 || angle > 120){
